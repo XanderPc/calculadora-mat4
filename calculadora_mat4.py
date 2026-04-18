@@ -1,4 +1,20 @@
+import os
+import subprocess
+import sys
+
+# Función para forzar la instalación si falta la librería
+try:
+    import sympy as sp
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "sympy", "numpy"])
+    import sympy as sp
+
 import streamlit as st
+
+# De aquí en adelante sigue tu código normal...
+st.set_page_config(page_title="Calculadora MAT4 - UPES", layout="wide")
+st.title("🧮 Calculadora de Sucesiones y Series")
+# ... (el resto del código que ya teníamos)import streamlit as st
 import sympy as sp
 
 st.set_page_config(page_title="Calculadora MAT4 - UPES", layout="wide")
